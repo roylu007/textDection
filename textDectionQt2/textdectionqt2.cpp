@@ -45,7 +45,13 @@ void textDectionQt2::textDectionTest(){
 void textDectionQt2::displayMat(cv::Mat mat)
 {
 	cv::Mat rgb;
-	cv::resize(mat, mat, cv::Size(), ui.imageShowLabel->width()*1.0 / mat.cols, ui.imageShowLabel->height()*1.0 / mat.rows);
+	if (mat.cols > mat.rows){
+		cv::resize(mat, mat, cv::Size(), ui.imageShowLabel->width()*1.0 / mat.cols, ui.imageShowLabel->width()*1.0 / mat.cols);
+	}
+	else{
+		cv::resize(mat, mat, cv::Size(), ui.imageShowLabel->height()*1.0 / mat.rows, ui.imageShowLabel->height()*1.0 / mat.rows);
+	}
+	//cv::resize(mat, mat, cv::Size(), ui.imageShowLabel->width()*1.0 / mat.cols, ui.imageShowLabel->height()*1.0 / mat.rows);
 	QImage img;
 	if (mat.channels() == 3)
 	{
