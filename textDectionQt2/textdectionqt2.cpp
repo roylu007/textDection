@@ -18,7 +18,7 @@ void textDectionQt2::uploadButton_clicked(){
 	filepath = filename.toStdString();
 	QTextCodec *code = QTextCodec::codecForName("gb18030");
 	std::string name = code->fromUnicode(filename).data();
-	cout << name << endl;
+	if (!name.size()) return;
 	image = cv::imread(name);
 	displayMat(image);
 }
@@ -30,7 +30,7 @@ void textDectionQt2::textDectionTest(){
 	//const char* str = "C:/Users/LuDa/Desktop/Error Screenshots for EPM/BPC/EPM-BPC-NW-ADM_1.png";
 	tesseract::TessBaseAPI  api;
 	api.Init(NULL, "eng", tesseract::OEM_DEFAULT);
-	api.SetVariable("tessedit_char_whitelist", "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,.?:&|*/+-;_-=()");
+	api.SetVariable("tessedit_char_whitelist", "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,.?!:*/+-;_-=()");
 
 	STRING text_out;
 	std::string res=filepath;
@@ -62,6 +62,7 @@ void textDectionQt2::displayMat(cv::Mat mat)
 }
 
 void textDectionQt2::displayResult(const string str){
+	if (!str.size()) QString content = QString::fromStdString("no");
 	QString content = QString::fromStdString(str);
 	ui.resultTextEdit->setText(content);
 }
