@@ -51,15 +51,17 @@ public:
         line_2->setFrameShadow(QFrame::Sunken);
         imageLabel = new QLabel(textDectionQt2Class);
         imageLabel->setObjectName(QStringLiteral("imageLabel"));
-        imageLabel->setGeometry(QRect(200, 10, 91, 41));
+        imageLabel->setGeometry(QRect(180, 0, 91, 41));
+        imageLabel->setTextFormat(Qt::RichText);
         imageLabel->setAlignment(Qt::AlignCenter);
         resultLabel = new QLabel(textDectionQt2Class);
         resultLabel->setObjectName(QStringLiteral("resultLabel"));
-        resultLabel->setGeometry(QRect(833, 22, 91, 21));
+        resultLabel->setGeometry(QRect(810, 10, 101, 31));
         resultLabel->setAlignment(Qt::AlignCenter);
         imageShowLabel = new QLabel(textDectionQt2Class);
         imageShowLabel->setObjectName(QStringLiteral("imageShowLabel"));
         imageShowLabel->setGeometry(QRect(13, 51, 551, 491));
+        imageShowLabel->setTextFormat(Qt::RichText);
         uploadButton = new QPushButton(textDectionQt2Class);
         uploadButton->setObjectName(QStringLiteral("uploadButton"));
         uploadButton->setGeometry(QRect(210, 560, 101, 41));
@@ -78,8 +80,8 @@ public:
     void retranslateUi(QWidget *textDectionQt2Class)
     {
         textDectionQt2Class->setWindowTitle(QApplication::translate("textDectionQt2Class", "textDectionQt2", Q_NULLPTR));
-        imageLabel->setText(QApplication::translate("textDectionQt2Class", "Image", Q_NULLPTR));
-        resultLabel->setText(QApplication::translate("textDectionQt2Class", "Result", Q_NULLPTR));
+        imageLabel->setText(QApplication::translate("textDectionQt2Class", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600; color:#000000;\">Image</span></p></body></html>", Q_NULLPTR));
+        resultLabel->setText(QApplication::translate("textDectionQt2Class", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">Result</span></p></body></html>", Q_NULLPTR));
         imageShowLabel->setText(QString());
         uploadButton->setText(QApplication::translate("textDectionQt2Class", "upload", Q_NULLPTR));
         testButton->setText(QApplication::translate("textDectionQt2Class", "Test", Q_NULLPTR));

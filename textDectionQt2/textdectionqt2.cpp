@@ -29,8 +29,8 @@ void textDectionQt2::textDectionTest(){
     const char * str = filepath.c_str();
 	//const char* str = "C:/Users/LuDa/Desktop/Error Screenshots for EPM/BPC/EPM-BPC-NW-ADM_1.png";
 	tesseract::TessBaseAPI  api;
-	api.Init(NULL, "eng", tesseract::OEM_DEFAULT);
-	api.SetVariable("tessedit_char_whitelist", "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,.?!:*/+-;_-=()");
+	api.Init(NULL, "chi_sim", tesseract::OEM_DEFAULT);
+	//api.SetVariable("tessedit_char_whitelist", "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,.?!:*/+-;_-=()");
 
 	STRING text_out;
 	std::string res=filepath;
